@@ -1,7 +1,6 @@
 from atproto import Client, models
 from atproto_client.utils import TextBuilder
 import dotenv, os, rich
-import time, requests
 from flask import Flask
 
 dotenv.load_dotenv()
