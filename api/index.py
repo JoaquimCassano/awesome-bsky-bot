@@ -2,6 +2,7 @@ from atproto import Client, models
 from atproto_client.utils import TextBuilder
 import dotenv, os, rich
 import time, requests
+from flask import Flask
 
 dotenv.load_dotenv()
 user = os.getenv("BSKY_USER") ; passwd = os.getenv("BSKY_PASS")
@@ -45,8 +46,7 @@ def reply(mention: models.AppBskyNotificationListNotifications.Notification):
   )
 
 
-def MainFlow():
-  while True:
+def MainFunction():
     mentions = GetMentions()
     for mention in mentions:
       rich.print(f'[blue bold]NEW MENTION[/blue bold]: {mention.author.display_name}')
@@ -54,6 +54,13 @@ def MainFlow():
       print('Posted instructions.')
       print('\n \n \n \n')
 
-    time.sleep(180)
 
-MainFlow()
+app = Flask(__name__)
+
+@app.route('/check')
+def check():
+  MainFunction()
+  return 'ok'
+
+if __name__ == '__main__':
+  app.run()

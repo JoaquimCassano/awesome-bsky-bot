@@ -1,0 +1,21 @@
+{
+  "version": 2,
+  "crons": [
+    {
+      "path": "/check",
+      "schedule": "*/5 * * * *"
+    }
+  ],
+  "builds": [
+    {
+      "src": "api/index.py",
+      "use": "@vercel/python"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/check",
+      "dest": "/api/index.py"
+    }
+  ]
+}
