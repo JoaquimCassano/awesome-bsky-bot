@@ -56,7 +56,7 @@ def MainFunction():
 
 app = Flask(__name__)
 
-@app.route('/check')
+@app.route('/')
 def check():
   MainFunction()
   return 'ok'
