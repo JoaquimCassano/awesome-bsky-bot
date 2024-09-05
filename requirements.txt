@@ -1,4 +1,3 @@
 atproto
 flask
 rich
-dotenv
