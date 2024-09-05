@@ -6,7 +6,7 @@
       "use": "@vercel/python"
     }
   ],
-  
+
   "routes": [
     {
       "src": "/check",
@@ -16,7 +16,7 @@
   "crons": [
     {
       "path": "/api/check",
-      "schedule": "*/5 * * * *"
+      "schedule": "0 1 * * *"
     }
   ]
 }
