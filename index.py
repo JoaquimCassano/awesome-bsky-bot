@@ -46,7 +46,6 @@ def reply(mention: models.AppBskyNotificationListNotifications.Notification):
 
 
 def MainFlow():
-  while True:
     mentions = GetMentions()
     for mention in mentions:
       rich.print(f'[blue bold]NEW MENTION[/blue bold]: {mention.author.display_name}')
@@ -54,6 +53,5 @@ def MainFlow():
       print('Posted instructions.')
       print('\n \n \n \n')
 
-    time.sleep(180)
 
 MainFlow()
