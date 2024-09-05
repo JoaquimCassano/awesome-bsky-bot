@@ -1,0 +1,4 @@
+atproto
+dotenv
+rich
+requests
